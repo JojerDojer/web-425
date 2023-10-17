@@ -1,2 +1,6 @@
 # web-425
-Repository for React Course
+
+## Contributors
+* John Davidson
+* Professor Krasso
+
