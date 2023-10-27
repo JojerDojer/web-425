@@ -1,0 +1,52 @@
+<!--
+  Title: app.component.html
+  Author: John Davidson
+  Data: 27 October 2023
+  Description: The component html file.
+-->
+<!-- Create a navigation bar. -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- The main div containg two columns. -->
+<div role="main" class="container">
+  <br /><br />
+
+  <h2>{{ assignment }}</h2>
+
+  <br /><br />
+
+<!-- A row resting two columns. -->
+  <div class="row" *ngIf="isLoggedIn; else showError">
+
+    <!-- A left column containing a profile image. -->
+    <div class="col-sm-4">
+      <app-my-image></app-my-image>
+    </div>
+
+    <!-- A right column containing details about myself. -->
+    <div class="col-sm-8">
+      <app-my-details></app-my-details>
+    </div>
+
+  </div>
+  <ng-template #showError>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="alert alert-danger">You are not authorized to view this content.</h4>
+      </div>
+    </div>
+
+  </ng-template>
+</div>
